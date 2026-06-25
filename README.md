@@ -84,7 +84,20 @@ pactl info
 Expected output (your version may differ):
 
 ```
-Server Name: PulseAudio (on PipeWire 0.3.x)
+Server String: unix:/data/data/com.termux/files/usr/tmp/pulse/native
+Library Protocol Version: 35
+Server Protocol Version: 35
+Is Local: yes
+Client Index: 83
+Tile Size: 65472
+User Name: u0_a3702
+Host Name: localhost
+Server Name: PulseAudio (on PipeWire 1.6.7)
+Server Version: 15.0.0
+Default Sample Specification: float32le 2ch 48000Hz
+Default Channel Map: front-left,front-right                                                  Default Sink: oboe-sink-6770-27
+Default Source: oboe-source-6770-28
+Cookie: 71dd:408d
 ```
 
 ---
@@ -102,6 +115,25 @@ Then verify the connection:
 ```bash
 pactl info
 ```
+
+```
+Server String: unix:/tmp/pulse/native
+Library Protocol Version: 35
+Server Protocol Version: 35
+Is Local: yes
+Client Index: 82
+Tile Size: 65472
+User Name: u0_a3702
+Host Name: localhost
+Server Name: PulseAudio (on PipeWire 1.6.7)
+Server Version: 15.0.0
+Default Sample Specification: float32le 2ch 48000Hz
+Default Channel Map: front-left,front-right
+Default Sink: oboe-sink-6770-27
+Default Source: oboe-source-6770-28
+Cookie: 71dd:408d
+```
+
 
 The output should match what you see in Termux. Audio applications inside the proot can now play and record through PipeWire, which routes audio through Android's AAudio/Oboe stack.
 
