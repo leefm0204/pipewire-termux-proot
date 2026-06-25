@@ -5,7 +5,7 @@
 This build enables PipeWire to function as a PulseAudio-compatible server on Android devices. Audio is routed through Android's native audio stack via AAudio (NDK) and Oboe (C++), allowing audio playback and capture in Termux and within **proot-distro** environments (e.g., Ubuntu).
 
 > **Credit:** [knyipab](https://github.com/knyipab/termux-packages/tree/10c726bbf78cd4008755f30467f7637d9763e318/packages/pipewire) originally created the `module-aaudio` and `module-oboe` patches. This repository adapts those patches for **PipeWire 1.6.7** and provides an updated build pipeline.
-
+>  **Credit:** [Oboe Google](https://github.com/google/oboe/releases/download/1.10.0/oboe-1.10.0.aar) Precompiled libobeo.so and hearders
 ---
 
 ## Contents
@@ -165,7 +165,14 @@ cd pipewire-termux-proot
 meson subprojects download
 ```
 
-4. Adjust the Android NDK environment flags based on your setup, then run:
+4. move oboe/libobeo.so to the android ndk sysroot library target api folder and then oboe headers folder in obeo/include/oboe to android ndk syaroot include dirs . for example target api is 35 :
+
+```bash
+mv oboe/libobeo.so $SYSROOT/usr/lib/aarch64-linux-android/35 
+mv oboe/include/oboe $SYSROOT/usr/include
+```
+
+5. Adjust the Android NDK environment flags based on your setup, then run:
 
 ```bash
 ./build-pipewire.sh
@@ -195,5 +202,5 @@ These are loaded in `pipewire.conf` and `pipewire-pulse.conf` — see `patches/0
 
 ## License
 
-PipeWire is licensed under the [MIT license](LICENSE). See [COPYING](COPYING) for details. Exceptions are noted in [LICENSE](LICENSE).
+PipeWire & Oboe is licensed under the [MIT license](LICENSE). See [COPYING](COPYING) for details. Exceptions are noted in [LICENSE](LICENSE).
 
