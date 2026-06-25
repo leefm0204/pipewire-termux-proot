@@ -1,0 +1,28 @@
+[options]
+prefix = /data/data/com.termux/files/usr
+auto_features = disabled
+spa-plugins = enabled
+support = enabled
+dbus = disabled
+flatpak = disabled
+pipewire-jack = disabled
+pipewire-v4l2 = disabled
+legacy-rtkit = false
+jack-devel = false
+tests = disabled
+examples = disabled
+audioconvert = enabled
+gstreamer = disabled
+gstreamer-device-provider = disabled
+alsa = disabled
+jack = disabled
+session-managers = wireplumber
+rlimits-install = false
+pam-defaults-install = false
+ffmpeg = enabled
+wireplumber:system-lua = true
+wireplumber:system-lua-version = 5.4
+
+[properties]
+cross_file = ['/data/data/com.termux/files/home/pipewire-termux-proot/android-arm64.txt']
+

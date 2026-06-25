@@ -1,0 +1,251 @@
+--- a/meson.build
++++ b/meson.build
+@@ -115,7 +115,7 @@ cc_flags = common_flags + [
+   '-Werror=old-style-declaration',
+   '-Werror=old-style-definition',
+   '-Werror=missing-parameter-type',
+-  '-Werror=strict-prototypes',
++  
+   '-Werror=discarded-qualifiers',
+ ]
+ add_project_arguments(cc.get_supported_arguments(cc_flags), language: 'c')
+@@ -487,6 +487,15 @@ else
+   endif
+ endif
+ 
++# On Android, AAudio and Oboe is required
++libaaudio_dep = (host_machine.system() == 'android'
++    ? cc.find_library('aaudio', required : true)
++    : dependency('', required: false))
++
++liboboe_dep = (host_machine.system() == 'android'
++    ? cc.find_library('oboe', required : true)
++    : dependency('', required: false))
++
+ # On FreeBSD and MidnightBSD, epoll-shim library is required for eventfd() and timerfd()
+ epoll_shim_dep = (host_machine.system() == 'freebsd' or host_machine.system() == 'midnightbsd'
+     ? dependency('epoll-shim', required: true)
+--- a/pipewire-alsa/alsa-plugins/pcm_pipewire.c
++++ b/pipewire-alsa/alsa-plugins/pcm_pipewire.c
+@@ -1230,7 +1230,7 @@ static const struct pw_core_events core_events = {
+ };
+ 
+ 
+-static ssize_t log_write(void *cookie, const char *buf, size_t size)
++static int log_write(void *cookie, const char *buf, int size)
+ {
+ 	int len;
+ 
+@@ -1244,10 +1244,6 @@ static ssize_t log_write(void *cookie, const char *buf, size_t size)
+ 	return size;
+ }
+ 
+-static const cookie_io_functions_t io_funcs = {
+-	.write = log_write,
+-};
+-
+ static int execute_match(void *data, const char *location, const char *action,
+                 const char *val, size_t len)
+ {
+@@ -1273,7 +1269,7 @@ static int snd_pcm_pipewire_open(snd_pcm_t **pcmp,
+ 	pw->props = props;
+ 	pw->fd = -1;
+ 	pw->io.poll_fd = -1;
+-	pw->log_file = fopencookie(pw, "w", io_funcs);
++	pw->log_file = fwopen(pw, log_write);
+ 	if (pw->log_file == NULL) {
+ 		pw_log_error("can't create log file: %m");
+ 		err = -errno;
+--- a/pipewire-jack/src/pipewire-jack.c
++++ b/pipewire-jack/src/pipewire-jack.c
+@@ -7666,8 +7666,14 @@ int jack_client_kill_thread(jack_client_t* client, jack_native_thread_t thread)
+ 
+ 	return_val_if_fail(client != NULL, -EINVAL);
+ 
++#ifndef __ANDROID__
+ 	pw_log_debug("cancel thread %p", (void *) thread);
+ 	pthread_cancel(thread);
++#else
++	// corresponding patches are done on the client side code (libjack) to accept SIGUSR2
++	pw_log_debug("kill thread %p with SIGUSR2 (android)", (void *) thread);
++	pthread_kill(thread, SIGUSR2);
++#endif
+ 	pw_log_debug("join thread %p", (void *) thread);
+ 	spa_thread_utils_join(&c->context.thread_utils, (struct spa_thread*)thread, &status);
+ 	pw_log_debug("stopped thread %p", (void *) thread);
+--- a/spa/plugins/alsa/alsa-pcm.c
++++ b/spa/plugins/alsa/alsa-pcm.c
+@@ -711,7 +711,7 @@ int spa_alsa_parse_prop_params(struct state *state, struct spa_pod *params)
+ }
+ 
+ 
+-static ssize_t log_write(void *cookie, const char *buf, size_t size)
++static int log_write(void *cookie, const char *buf, int size)
+ {
+ 	struct state *state = cookie;
+ 
+@@ -732,10 +732,6 @@ static ssize_t log_write(void *cookie, const char *buf, size_t size)
+ 	return size;
+ }
+ 
+-static const cookie_io_functions_t io_funcs = {
+-	.write = log_write,
+-};
+-
+ static void silence_error_handler(const char *file, int line,
+ 		const char *function, int err, const char *fmt, ...)
+ {
+@@ -1053,7 +1049,7 @@ int spa_alsa_init(struct state *state, const struct spa_dict *info)
+ 
+ 	state->card = ensure_card(state->card_index, state->open_ucm, state->is_split_parent);
+ 
+-	state->log_file = fopencookie(state, "w", io_funcs);
++	state->log_file = fwopen(state, log_write);
+ 	if (state->log_file == NULL) {
+ 		spa_log_error(state->log, "can't create log file");
+ 		return -errno;
+--- a/spa/plugins/support/loop.c
++++ b/spa/plugins/support/loop.c
+@@ -1383,9 +1383,11 @@ impl_init(const struct spa_handle_factory *factory,
+ 
+ 	CHECK(pthread_mutexattr_init(&attr), error_exit);
+ 	CHECK(pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE), error_exit_free_attr);
++#ifndef __ANDROID__
+ 	if (impl->prio_inherit)
+ 		CHECK(pthread_mutexattr_setprotocol(&attr, PTHREAD_PRIO_INHERIT),
+ 					error_exit_free_attr)
++#endif
+ 	CHECK(pthread_mutex_init(&impl->lock, &attr), error_exit_free_attr);
+ 	pthread_mutexattr_destroy(&attr);
+ 
+--- a/src/daemon/pipewire-pulse.conf.in
++++ b/src/daemon/pipewire-pulse.conf.in
+@@ -69,6 +69,8 @@ context.exec = [
+ pulse.cmd = [
+     { cmd = "load-module" args = "module-always-sink" flags = [ ]
+         condition = [ { pulse.cmd.always-sink = !false } ] }
++    { cmd = "load-module" args = "module-oboe-sink" flags = [ ] }
++    { cmd = "load-module" args = "module-oboe-source" flags = [ ] }
+     { cmd = "load-module" args = "module-device-manager" flags = [ ]
+         condition = [ { pulse.cmd.device-manager = !false } ] }
+     { cmd = "load-module" args = "module-device-restore" flags = [ ]
+@@ -100,7 +102,7 @@ pulse.properties = {
+     server.address = [
+         "unix:native"
+         #"unix:/tmp/something"              # absolute paths may be used
+-        #"tcp:4713"                         # IPv4 and IPv6 on all addresses
++        "tcp:4713"                         # IPv4 and IPv6 on all addresses
+         #"tcp:[::]:9999"                    # IPv6 on all addresses
+         #"tcp:127.0.0.1:8888"               # IPv4 on a single address
+         #
+--- a/src/daemon/pipewire.conf.in
++++ b/src/daemon/pipewire.conf.in
+@@ -254,6 +254,18 @@ context.modules = [
+         flags = [ ifexists nofail ]
+         condition = [ { module.jackdbus-detect = !false } ]
+     }
++
++    # Oboe sink and source
++    { name = libpipewire-module-oboe-sink
++        args = {
++            stream.write.timeout = 5000
++        }
++    }
++    { name = libpipewire-module-oboe-source
++        args = {
++            stream.read.timeout = 0
++        }
++    }
+ ]
+ 
+ context.objects = [
+--- a/src/modules/meson.build
++++ b/src/modules/meson.build
+@@ -3,6 +3,10 @@ subdir('module-rt')
+ # The list of "main" source files for modules, the ones that have the
+ # doxygen documentation
+ module_sources = [
++  'module-aaudio-source.c',
++  'module-aaudio-sink.c',
++  'module-oboe-sink.cpp',
++  'module-oboe-source.cpp',
+   'module-access.c',
+   'module-adapter.c',
+   'module-avb.c',
+@@ -52,6 +56,45 @@ module_sources = [
+   'module-x11-bell.c',
+ ]
+ 
++if libaaudio_dep.found()
++  pipewire_module_aaudio_sink = shared_library('pipewire-module-aaudio-sink',
++    [ 'module-aaudio-sink.c' ],
++    include_directories : [configinc],
++    install : true,
++    install_dir : modules_install_dir,
++    install_rpath: modules_install_dir,
++    dependencies : [spa_dep, mathlib, dl_lib, pipewire_dep, libaaudio_dep],
++  )
++
++  pipewire_module_aaudio_source = shared_library('pipewire-module-aaudio-source',
++    [ 'module-aaudio-source.c' ],
++    include_directories : [configinc],
++    install : true,
++    install_dir : modules_install_dir,
++    install_rpath: modules_install_dir,
++    dependencies : [spa_dep, mathlib, dl_lib, pipewire_dep, libaaudio_dep],
++  )
++endif
++
++if liboboe_dep.found()
++  pipewire_module_oboe_sink = shared_library('pipewire-module-oboe-sink',
++    [ 'module-oboe-sink.cpp' ],
++    include_directories : [configinc],
++    install : true,
++    install_dir : modules_install_dir,
++    install_rpath: modules_install_dir,
++    dependencies : [spa_dep, mathlib, dl_lib, pipewire_dep, liboboe_dep],
++  )
++  pipewire_module_oboe_source = shared_library('pipewire-module-oboe-source',
++    [ 'module-oboe-source.cpp' ],
++    include_directories : [configinc],
++    install : true,
++    install_dir : modules_install_dir,
++    install_rpath: modules_install_dir,
++    dependencies : [spa_dep, mathlib, dl_lib, pipewire_dep, liboboe_dep],
++  )
++endif
++
+ pipewire_module_access_deps = [spa_dep, mathlib, dl_lib, pipewire_dep]
+ if flatpak_support
+   pipewire_module_access_deps += glib2_dep
+@@ -320,6 +363,10 @@ pipewire_module_protocol_pulse_sources = [
+   'module-protocol-pulse/stream.c',
+   'module-protocol-pulse/utils.c',
+   'module-protocol-pulse/volume.c',
++  'module-protocol-pulse/modules/module-aaudio-sink.c',
++  'module-protocol-pulse/modules/module-aaudio-source.c',
++  'module-protocol-pulse/modules/module-oboe-sink.c',
++  'module-protocol-pulse/modules/module-oboe-source.c',
+   'module-protocol-pulse/modules/module-alsa-sink.c',
+   'module-protocol-pulse/modules/module-alsa-source.c',
+   'module-protocol-pulse/modules/module-always-sink.c',
+@@ -467,7 +514,8 @@ pipewire_module_example_sink = shared_library('pipewire-module-example-source',
+ )
+ 
+ pipewire_module_client_node = shared_library('pipewire-module-client-node',
+-  [ 'module-client-node.c',
++  [ 'reallocarray.c',
++    'module-client-node.c',
+     'module-client-node/remote-node.c',
+     'module-client-node/client-node.c',
+     'module-client-node/protocol-native.c',
+@@ -533,7 +581,8 @@ pipewire_module_adapter = shared_library('pipewire-module-adapter',
+ )
+ 
+ pipewire_module_session_manager = shared_library('pipewire-module-session-manager',
+-  [ 'module-session-manager.c',
++  [ 'reallocarray.c',
++    'module-session-manager.c',
+     'module-session-manager/client-endpoint/client-endpoint.c',
+     'module-session-manager/client-endpoint/endpoint-stream.c',
+     'module-session-manager/client-endpoint/endpoint.c',

@@ -1,0 +1,319 @@
+[
+  {
+    "name": "threads",
+    "type": "system",
+    "version": "unknown",
+    "compile_args": [
+      "-pthread"
+    ],
+    "link_args": [
+      "-pthread"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "pthread_lib"
+    ]
+  },
+  {
+    "name": "libdrm",
+    "type": "pkgconfig",
+    "version": "2.4.134",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include",
+      "-I/data/data/com.termux/files/usr/include/libdrm"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libdrm.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "drm_dep"
+    ]
+  },
+  {
+    "name": "libavcodec",
+    "type": "pkgconfig",
+    "version": "62.28.102",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libavcodec.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "avcodec_dep"
+    ]
+  },
+  {
+    "name": "libavformat",
+    "type": "pkgconfig",
+    "version": "62.12.102",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libavformat.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "avformat_dep"
+    ]
+  },
+  {
+    "name": "libavfilter",
+    "type": "pkgconfig",
+    "version": "11.14.102",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libavfilter.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "avfilter_dep"
+    ]
+  },
+  {
+    "name": "libavutil",
+    "type": "pkgconfig",
+    "version": "60.26.102",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libavutil.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "avutil_dep"
+    ]
+  },
+  {
+    "name": "libswscale",
+    "type": "pkgconfig",
+    "version": "9.5.102",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libswscale.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "swscale_dep"
+    ]
+  },
+  {
+    "name": "ncursesw",
+    "type": "pkgconfig",
+    "version": "6.5.20250830",
+    "compile_args": [
+      "-DNCURSES_WIDECHAR",
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "-Wl,-rpath=/data/data/com.termux/files/usr/lib",
+      "-Wl,--enable-new-dtags",
+      "/data/data/com.termux/files/usr/lib/libncursesw.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "ncurses_dep"
+    ]
+  },
+  {
+    "name": "intl",
+    "type": "builtin",
+    "version": "unknown",
+    "compile_args": [],
+    "link_args": [],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "libintl_dep"
+    ]
+  },
+  {
+    "name": "alsa",
+    "type": "pkgconfig",
+    "version": "1.2.16.1",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libasound.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "glib-2.0",
+    "type": "pkgconfig",
+    "version": "2.88.1",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include/glib-2.0",
+      "-I/data/data/com.termux/files/usr/lib/glib-2.0/include",
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "gobject-2.0",
+    "type": "pkgconfig",
+    "version": "2.88.1",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include",
+      "-I/data/data/com.termux/files/usr/include/glib-2.0",
+      "-I/data/data/com.termux/files/usr/lib/glib-2.0/include",
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libgobject-2.0.so",
+      "/data/data/com.termux/files/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "gmodule-2.0",
+    "type": "pkgconfig",
+    "version": "2.88.1",
+    "compile_args": [
+      "-pthread",
+      "-I/data/data/com.termux/files/usr/include",
+      "-I/data/data/com.termux/files/usr/include/glib-2.0",
+      "-I/data/data/com.termux/files/usr/lib/glib-2.0/include",
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "-Wl,--export-dynamic",
+      "/data/data/com.termux/files/usr/lib/libgmodule-2.0.so",
+      "-pthread",
+      "/data/data/com.termux/files/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "gio-2.0",
+    "type": "pkgconfig",
+    "version": "2.88.1",
+    "compile_args": [
+      "-pthread",
+      "-I/data/data/com.termux/files/usr/include",
+      "-I/data/data/com.termux/files/usr/include/glib-2.0",
+      "-I/data/data/com.termux/files/usr/lib/glib-2.0/include",
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libgio-2.0.so",
+      "/data/data/com.termux/files/usr/lib/libgobject-2.0.so",
+      "/data/data/com.termux/files/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "gio-unix-2.0",
+    "type": "pkgconfig",
+    "version": "2.88.1",
+    "compile_args": [
+      "-pthread",
+      "-I/data/data/com.termux/files/usr/include/gio-unix-2.0",
+      "-I/data/data/com.termux/files/usr/include",
+      "-I/data/data/com.termux/files/usr/include/glib-2.0",
+      "-I/data/data/com.termux/files/usr/lib/glib-2.0/include",
+      "-I/data/data/com.termux/files/usr/include"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/libgio-2.0.so",
+      "/data/data/com.termux/files/usr/lib/libgobject-2.0.so",
+      "/data/data/com.termux/files/usr/lib/libglib-2.0.so"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  },
+  {
+    "name": "lua-5.4",
+    "type": "pkgconfig",
+    "version": "5.4.8",
+    "compile_args": [
+      "-I/data/data/com.termux/files/usr/include/lua5.4"
+    ],
+    "link_args": [
+      "/data/data/com.termux/files/usr/lib/liblua5.4.so",
+      "-lm"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": []
+  }
+]

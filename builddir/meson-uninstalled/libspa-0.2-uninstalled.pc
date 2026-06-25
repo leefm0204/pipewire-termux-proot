@@ -1,0 +1,10 @@
+prefix=/data/data/com.termux/files/home/pipewire-termux-proot/builddir
+includedir=${prefix}/include
+srcdir=/data/data/com.termux/files/home/pipewire-termux-proot
+
+plugindir=${prefix}/spa/plugins
+
+Name: libspa
+Description: Simple Plugin API
+Version: 0.2
+Cflags: -D_REENTRANT -fno-strict-aliasing -fno-strict-overflow

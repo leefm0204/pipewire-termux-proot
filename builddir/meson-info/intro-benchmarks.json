@@ -1,0 +1,130 @@
+[
+  {
+    "cmd": [
+      "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins/audioconvert/benchmark-fmt-ops"
+    ],
+    "env": {
+      "SPA_PLUGIN_DIR": "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins",
+      "LD_LIBRARY_PATH": "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins/audioconvert"
+    },
+    "name": "benchmark-fmt-ops",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "pipewire"
+    ],
+    "is_parallel": false,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "e8779ba@@benchmark-fmt-ops@exe"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins/audioconvert/benchmark-resample"
+    ],
+    "env": {
+      "SPA_PLUGIN_DIR": "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins",
+      "LD_LIBRARY_PATH": "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins/audioconvert"
+    },
+    "name": "benchmark-resample",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "pipewire"
+    ],
+    "is_parallel": false,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "e8779ba@@benchmark-resample@exe"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins/audiomixer/benchmark-mix-ops"
+    ],
+    "env": {
+      "SPA_PLUGIN_DIR": "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins"
+    },
+    "name": "benchmark-mix-ops",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "pipewire"
+    ],
+    "is_parallel": false,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "55b85d2@@benchmark-mix-ops@exe"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/tests/spa-stress-ringbuffer"
+    ],
+    "env": {
+      "SPA_PLUGIN_DIR": "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins"
+    },
+    "name": "spa-stress-ringbuffer",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "pipewire"
+    ],
+    "is_parallel": false,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "f6cd4ad@@spa-stress-ringbuffer@exe"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/tests/spa-benchmark-pod"
+    ],
+    "env": {
+      "SPA_PLUGIN_DIR": "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins"
+    },
+    "name": "spa-benchmark-pod",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "pipewire"
+    ],
+    "is_parallel": false,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "f6cd4ad@@spa-benchmark-pod@exe"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/tests/spa-benchmark-dict"
+    ],
+    "env": {
+      "SPA_PLUGIN_DIR": "/data/data/com.termux/files/home/pipewire-termux-proot/builddir/spa/plugins"
+    },
+    "name": "spa-benchmark-dict",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "pipewire"
+    ],
+    "is_parallel": false,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "f6cd4ad@@spa-benchmark-dict@exe"
+    ],
+    "extra_paths": []
+  }
+]

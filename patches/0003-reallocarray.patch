@@ -1,0 +1,10 @@
+--- a/src/pipewire/meson.build
++++ b/src/pipewire/meson.build
+@@ -49,6 +49,7 @@ pipewire_headers = [
+ ]
+ 
+ pipewire_sources = [
++  'reallocarray.c',
+   'buffers.c',
+   'impl-core.c',
+   'impl-client.c',

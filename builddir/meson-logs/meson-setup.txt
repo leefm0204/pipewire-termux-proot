@@ -1,0 +1,623 @@
+The Meson build system
+Version: 1.11.1
+Source dir: /data/data/com.termux/files/home/pipewire-termux-proot
+Build dir: /data/data/com.termux/files/home/pipewire-termux-proot/builddir
+Build type: cross build
+Project name: pipewire
+Project version: 1.6.7
+C compiler for the host machine: clang (clang 21.1.8 "clang version 21.1.8")
+C linker for the host machine: clang ld.lld 21.1.8
+C compiler for the build machine: cc (clang 21.1.8 "clang version 21.1.8")
+C linker for the build machine: cc ld.lld 21.1.8
+Build machine cpu family: aarch64
+Build machine cpu: aarch64
+Host machine cpu family: aarch64
+Host machine cpu: armv8-a
+Target machine cpu family: aarch64
+Target machine cpu: armv8-a
+Has header "features.h" : YES 
+Fetching value of define "__GLIBC__" : (undefined) 
+Compiler for C supports arguments -fvisibility=hidden: YES 
+Compiler for C supports arguments -fno-strict-aliasing: YES 
+Compiler for C supports arguments -fno-strict-overflow: YES 
+Compiler for C supports arguments -DSPA_AUDIO_MAX_CHANNELS=128u: YES 
+Compiler for C supports arguments -Werror=suggest-attribute=format: NO 
+Compiler for C supports arguments -Wsign-compare: YES 
+Compiler for C supports arguments -Wpointer-arith: YES 
+Compiler for C supports arguments -Wpointer-sign: YES 
+Compiler for C supports arguments -Werror=format: YES 
+Compiler for C supports arguments -Wno-error=format-overflow: YES 
+Compiler for C supports arguments -Wformat-security: YES 
+Compiler for C supports arguments -Wimplicit-fallthrough: YES 
+Compiler for C supports arguments -Wmissing-braces: YES 
+Compiler for C supports arguments -Wtype-limits: YES 
+Compiler for C supports arguments -Wvariadic-macros: YES 
+Compiler for C supports arguments -Wmaybe-uninitialized: NO 
+Compiler for C supports arguments -Wno-missing-field-initializers: YES 
+Compiler for C supports arguments -Wno-unused-parameter: YES 
+Compiler for C supports arguments -Wno-pedantic: YES 
+Compiler for C supports arguments -Wdeprecated-declarations: YES 
+Compiler for C supports arguments -Wunused-result: YES 
+Compiler for C supports arguments -Werror=return-type: YES 
+Compiler for C supports arguments -Werror=float-conversion: YES 
+Compiler for C supports arguments -Werror=constant-conversion: YES 
+Compiler for C supports arguments -D_GNU_SOURCE: YES 
+Compiler for C supports arguments -DFASTPATH: YES 
+Compiler for C supports arguments -Werror=implicit-function-declaration: YES 
+Compiler for C supports arguments -Werror=incompatible-pointer-types: YES 
+Compiler for C supports arguments -Werror=int-conversion: YES 
+Compiler for C supports arguments -Werror=old-style-declaration: NO 
+Compiler for C supports arguments -Werror=old-style-definition: YES 
+Compiler for C supports arguments -Werror=missing-parameter-type: NO 
+Compiler for C supports arguments -Werror=discarded-qualifiers: NO 
+Compiler for C supports arguments -fvisibility=hidden: YES 
+Compiler for C supports arguments -fno-strict-aliasing: YES 
+Compiler for C supports arguments -fno-strict-overflow: YES 
+Compiler for C supports arguments -DSPA_AUDIO_MAX_CHANNELS=128u: YES 
+Compiler for C supports arguments -Werror=suggest-attribute=format: NO 
+Compiler for C supports arguments -Wsign-compare: YES 
+Compiler for C supports arguments -Wpointer-arith: YES 
+Compiler for C supports arguments -Wpointer-sign: YES 
+Compiler for C supports arguments -Werror=format: YES 
+Compiler for C supports arguments -Wno-error=format-overflow: YES 
+Compiler for C supports arguments -Wformat-security: YES 
+Compiler for C supports arguments -Wimplicit-fallthrough: YES 
+Compiler for C supports arguments -Wmissing-braces: YES 
+Compiler for C supports arguments -Wtype-limits: YES 
+Compiler for C supports arguments -Wvariadic-macros: YES 
+Compiler for C supports arguments -Wmaybe-uninitialized: NO 
+Compiler for C supports arguments -Wno-missing-field-initializers: YES 
+Compiler for C supports arguments -Wno-unused-parameter: YES 
+Compiler for C supports arguments -Wno-pedantic: YES 
+Compiler for C supports arguments -Wdeprecated-declarations: YES 
+Compiler for C supports arguments -Wunused-result: YES 
+Compiler for C supports arguments -Werror=return-type: YES 
+Compiler for C supports arguments -Werror=float-conversion: YES 
+Compiler for C supports arguments -Werror=constant-conversion: YES 
+Compiler for C supports arguments -D_GNU_SOURCE: YES 
+Compiler for C supports arguments -DFASTPATH: YES 
+Compiler for C supports arguments -Werror=implicit-function-declaration: YES 
+Compiler for C supports arguments -Werror=incompatible-pointer-types: YES 
+Compiler for C supports arguments -Werror=int-conversion: YES 
+Compiler for C supports arguments -Werror=old-style-declaration: NO 
+Compiler for C supports arguments -Werror=old-style-definition: YES 
+Compiler for C supports arguments -Werror=missing-parameter-type: NO 
+Compiler for C supports arguments -Werror=discarded-qualifiers: NO 
+C++ compiler for the host machine: clang++ (clang 21.1.8 "clang version 21.1.8")
+C++ linker for the host machine: clang++ ld.lld 21.1.8
+Compiler for C++ supports arguments -fvisibility=hidden: YES 
+Compiler for C++ supports arguments -fno-strict-aliasing: YES 
+Compiler for C++ supports arguments -fno-strict-overflow: YES 
+Compiler for C++ supports arguments -DSPA_AUDIO_MAX_CHANNELS=128u: YES 
+Compiler for C++ supports arguments -Werror=suggest-attribute=format: NO 
+Compiler for C++ supports arguments -Wsign-compare: YES 
+Compiler for C++ supports arguments -Wpointer-arith: YES 
+Compiler for C++ supports arguments -Wpointer-sign: YES 
+Compiler for C++ supports arguments -Werror=format: YES 
+Compiler for C++ supports arguments -Wno-error=format-overflow: YES 
+Compiler for C++ supports arguments -Wformat-security: YES 
+Compiler for C++ supports arguments -Wimplicit-fallthrough: YES 
+Compiler for C++ supports arguments -Wmissing-braces: YES 
+Compiler for C++ supports arguments -Wtype-limits: YES 
+Compiler for C++ supports arguments -Wvariadic-macros: YES 
+Compiler for C++ supports arguments -Wmaybe-uninitialized: NO 
+Compiler for C++ supports arguments -Wno-missing-field-initializers: YES 
+Compiler for C++ supports arguments -Wno-unused-parameter: YES 
+Compiler for C++ supports arguments -Wno-pedantic: YES 
+Compiler for C++ supports arguments -Wdeprecated-declarations: YES 
+Compiler for C++ supports arguments -Wunused-result: YES 
+Compiler for C++ supports arguments -Werror=return-type: YES 
+Compiler for C++ supports arguments -Werror=float-conversion: YES 
+Compiler for C++ supports arguments -Werror=constant-conversion: YES 
+Compiler for C++ supports arguments -Wno-c99-designator: YES 
+Checking if "aarch64 Neon Support" compiles: YES 
+Library atomic found: YES
+Checking if "8-byte __atomic_fetch_add without libatomic" links: YES 
+Has header "sys/auxv.h" : YES 
+Has header "sys/mount.h" : YES 
+Has header "sys/param.h" : YES 
+Has header "sys/random.h" : YES 
+Has header "sys/vfs.h" : YES 
+Has header "pwd.h" : YES 
+Has header "grp.h" : YES 
+Fetching value of define "SYS_pidfd_open" : 434 
+Dependency libsystemd for host machine skipped: feature libsystemd disabled
+Dependency libsystemd for host machine skipped: feature logind disabled
+Dependency libselinux for host machine skipped: feature selinux disabled
+Configuring Makefile using configuration
+Library m found: YES
+Library m found: YES
+Library rt found: YES
+Library dl found: YES
+Run-time dependency threads found: YES
+Dependency dbus-1 for host machine skipped: feature dbus disabled
+Dependency sdl2 for host machine skipped: feature sdl2 disabled
+Found pkg-config: YES (/data/data/com.termux/files/usr/bin/pkg-config) 0.29.2
+Run-time dependency libdrm found: YES 2.4.134
+Dependency fftw3f for host machine skipped: feature fftw disabled
+Run-time dependency libavcodec found: YES 62.28.102
+Run-time dependency libavformat found: YES 62.12.102
+Run-time dependency libavfilter found: YES 11.14.102
+Run-time dependency libavutil found: YES 60.26.102
+Run-time dependency libswscale found: YES 9.5.102
+Dependency opus for host machine skipped: feature opus disabled
+Run-time dependency ncursesw found: YES 6.5.20250830
+Dependency sndfile for host machine skipped: feature sndfile disabled
+Dependency libpulse for host machine skipped: feature libpulse disabled
+Dependency avahi-client for host machine skipped: feature avahi disabled
+Dependency x11-xcb for host machine skipped: feature x11 disabled
+Dependency xfixes for host machine skipped: feature x11-xfixes disabled
+Dependency libcanberra for host machine skipped: feature libcanberra disabled
+Dependency libusb-1.0 for host machine skipped: feature libusb disabled
+Dependency glib-2.0 for host machine skipped: feature flatpak disabled
+Dependency gio-2.0 for host machine skipped: feature gsettings disabled
+Dependency glib-2.0 for host machine skipped: feature gstreamer disabled
+Library aaudio found: YES
+Library oboe found: YES
+Library intl found: NO
+Run-time dependency intl found: YES
+Run-time dependency alsa found: YES 1.2.16.1
+Dependency openssl for host machine skipped: feature raop disabled
+Dependency libffado for host machine skipped: feature libffado disabled
+Dependency glib-2.0 for host machine skipped: feature snap disabled
+Dependency gio-2.0 for host machine skipped: feature snap disabled
+Dependency libapparmor for host machine skipped: feature snap disabled
+Found CMake: NO
+Run-time dependency snapd-glib-2 found: NO  (tried pkg-config and cmake)
+Dependency snapd-glib for host machine skipped: feature snap disabled
+Checking for function "gettid" : YES 
+Checking for function "memfd_create" : NO 
+Checking for function "getrandom" : NO 
+Checking for function "random_r" : NO 
+Checking for function "reallocarray" : NO 
+Checking for function "sigabbrev_np" : NO 
+Checking for function "XSetIOErrorExitHandler" with dependency x11-xcb: NO 
+Checking for function "malloc_trim" : NO 
+Checking for function "malloc_info" : YES 
+Program msgfmt found: YES (/data/data/com.termux/files/usr/bin/msgfmt)
+Program msginit found: YES (/data/data/com.termux/files/usr/bin/msginit)
+Program msgmerge found: YES (/data/data/com.termux/files/usr/bin/msgmerge)
+Program xgettext found: YES (/data/data/com.termux/files/usr/bin/xgettext)
+Found pkg-config: YES (/data/data/com.termux/files/usr/bin/pkg-config) 0.29.2
+Dependency jack for host machine skipped: feature jack disabled
+Dependency alsa for host machine skipped: feature alsa disabled
+Dependency bluez for host machine skipped: feature bluez5 disabled
+Dependency gio-2.0 for host machine skipped: feature bluez5 disabled
+Dependency gio-unix-2.0 for host machine skipped: feature bluez5 disabled
+Dependency glib-2.0 for host machine skipped: feature bluez5 disabled
+Dependency sbc for host machine skipped: feature bluez5 disabled
+Dependency vulkan for host machine skipped: feature vulkan disabled
+Dependency libcamera for host machine skipped: feature libcamera disabled
+Dependency libudev for host machine skipped: feature udev disabled
+Dependency libmysofa for host machine skipped: feature libmysofa disabled
+Dependency lilv-0 for host machine skipped: feature lv2 disabled
+Dependency libebur128 for host machine skipped: feature ebur128 disabled
+Dependency libonnxruntime for host machine skipped: feature onnxruntime disabled
+Library stdthreads found: NO
+Has header "linux/videodev2.h" skipped: feature v4l2 disabled
+Program find found: YES (/data/data/com.termux/files/usr/bin/find)
+Configuring spa-include-test-spa_buffer_alloc_h.cpp using configuration
+Configuring spa-include-test-spa_buffer_buffer_h.cpp using configuration
+Configuring spa-include-test-spa_buffer_meta_h.cpp using configuration
+Configuring spa-include-test-spa_control_control_h.cpp using configuration
+Configuring spa-include-test-spa_control_ump_utils_h.cpp using configuration
+Configuring spa-include-test-spa_debug_buffer_h.cpp using configuration
+Configuring spa-include-test-spa_debug_context_h.cpp using configuration
+Configuring spa-include-test-spa_debug_dict_h.cpp using configuration
+Configuring spa-include-test-spa_debug_file_h.cpp using configuration
+Configuring spa-include-test-spa_debug_format_h.cpp using configuration
+Configuring spa-include-test-spa_debug_log_h.cpp using configuration
+Configuring spa-include-test-spa_debug_mem_h.cpp using configuration
+Configuring spa-include-test-spa_debug_node_h.cpp using configuration
+Configuring spa-include-test-spa_debug_pod_h.cpp using configuration
+Configuring spa-include-test-spa_debug_types_h.cpp using configuration
+Configuring spa-include-test-spa_filter_graph_filter_graph_h.cpp using configuration
+Configuring spa-include-test-spa_graph_graph_h.cpp using configuration
+Configuring spa-include-test-spa_interfaces_audio_aec_h.cpp using configuration
+Configuring spa-include-test-spa_monitor_device_h.cpp using configuration
+Configuring spa-include-test-spa_monitor_event_h.cpp using configuration
+Configuring spa-include-test-spa_monitor_utils_h.cpp using configuration
+Configuring spa-include-test-spa_node_command_h.cpp using configuration
+Configuring spa-include-test-spa_node_event_h.cpp using configuration
+Configuring spa-include-test-spa_node_io_h.cpp using configuration
+Configuring spa-include-test-spa_node_keys_h.cpp using configuration
+Configuring spa-include-test-spa_node_node_h.cpp using configuration
+Configuring spa-include-test-spa_node_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_aac_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_aac_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_aac_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_ac3_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_ac3_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_alac_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_alac_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_amr_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_amr_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_amr_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_ape_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_ape_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_compressed_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_dsd_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_dsd_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_dsp_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_dsp_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_dts_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_dts_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_dts_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_eac3_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_eac3_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_flac_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_flac_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_format_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_format_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_iec958_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_iec958_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_iec958_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_layout_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_layout_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_mp3_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_mp3_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_mp3_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_mpegh_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_mpegh_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_opus_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_ra_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_ra_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_raw_json_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_raw_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_raw_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_raw_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_truehd_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_truehd_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_vorbis_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_vorbis_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_wma_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_wma_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_audio_wma_h.cpp using configuration
+Configuring spa-include-test-spa_param_bluetooth_audio_h.cpp using configuration
+Configuring spa-include-test-spa_param_buffers_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_buffers_h.cpp using configuration
+Configuring spa-include-test-spa_param_dict_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_dict_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_dict_h.cpp using configuration
+Configuring spa-include-test-spa_param_format_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_format_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_format_h.cpp using configuration
+Configuring spa-include-test-spa_param_latency_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_latency_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_latency_h.cpp using configuration
+Configuring spa-include-test-spa_param_param_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_param_h.cpp using configuration
+Configuring spa-include-test-spa_param_peer_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_peer_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_peer_h.cpp using configuration
+Configuring spa-include-test-spa_param_port_config_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_port_config_h.cpp using configuration
+Configuring spa-include-test-spa_param_profile_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_profile_h.cpp using configuration
+Configuring spa-include-test-spa_param_profiler_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_profiler_h.cpp using configuration
+Configuring spa-include-test-spa_param_props_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_props_h.cpp using configuration
+Configuring spa-include-test-spa_param_route_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_route_h.cpp using configuration
+Configuring spa-include-test-spa_param_tag_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_tag_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_tag_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_chroma_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_color_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_color_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_dsp_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_dsp_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_encoded_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_format_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_format_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_h264_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_h264_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_h265_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_h265_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_mjpg_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_mjpg_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_multiview_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_raw_types_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_raw_utils_h.cpp using configuration
+Configuring spa-include-test-spa_param_video_raw_h.cpp using configuration
+Configuring spa-include-test-spa_pod_body_h.cpp using configuration
+Configuring spa-include-test-spa_pod_builder_h.cpp using configuration
+Configuring spa-include-test-spa_pod_command_h.cpp using configuration
+Configuring spa-include-test-spa_pod_compare_h.cpp using configuration
+Configuring spa-include-test-spa_pod_dynamic_h.cpp using configuration
+Configuring spa-include-test-spa_pod_event_h.cpp using configuration
+Configuring spa-include-test-spa_pod_filter_h.cpp using configuration
+Configuring spa-include-test-spa_pod_iter_h.cpp using configuration
+Configuring spa-include-test-spa_pod_parser_h.cpp using configuration
+Configuring spa-include-test-spa_pod_pod_h.cpp using configuration
+Configuring spa-include-test-spa_pod_simplify_h.cpp using configuration
+Configuring spa-include-test-spa_pod_vararg_h.cpp using configuration
+Configuring spa-include-test-spa_support_cpu_h.cpp using configuration
+Configuring spa-include-test-spa_support_dbus_h.cpp using configuration
+Configuring spa-include-test-spa_support_i18n_h.cpp using configuration
+Configuring spa-include-test-spa_support_log_impl_h.cpp using configuration
+Configuring spa-include-test-spa_support_log_h.cpp using configuration
+Configuring spa-include-test-spa_support_loop_h.cpp using configuration
+Configuring spa-include-test-spa_support_plugin_loader_h.cpp using configuration
+Configuring spa-include-test-spa_support_plugin_h.cpp using configuration
+Configuring spa-include-test-spa_support_system_h.cpp using configuration
+Configuring spa-include-test-spa_support_thread_h.cpp using configuration
+Configuring spa-include-test-spa_utils_ansi_h.cpp using configuration
+Configuring spa-include-test-spa_utils_atomic_h.cpp using configuration
+Configuring spa-include-test-spa_utils_cleanup_h.cpp using configuration
+Configuring spa-include-test-spa_utils_defs_h.cpp using configuration
+Configuring spa-include-test-spa_utils_dict_h.cpp using configuration
+Configuring spa-include-test-spa_utils_dll_h.cpp using configuration
+Configuring spa-include-test-spa_utils_endian_h.cpp using configuration
+Configuring spa-include-test-spa_utils_enum_types_h.cpp using configuration
+Configuring spa-include-test-spa_utils_hook_h.cpp using configuration
+Configuring spa-include-test-spa_utils_json_core_h.cpp using configuration
+Configuring spa-include-test-spa_utils_json_pod_h.cpp using configuration
+Configuring spa-include-test-spa_utils_json_h.cpp using configuration
+Configuring spa-include-test-spa_utils_keys_h.cpp using configuration
+Configuring spa-include-test-spa_utils_list_h.cpp using configuration
+Configuring spa-include-test-spa_utils_names_h.cpp using configuration
+Configuring spa-include-test-spa_utils_ratelimit_h.cpp using configuration
+Configuring spa-include-test-spa_utils_result_h.cpp using configuration
+Configuring spa-include-test-spa_utils_ringbuffer_h.cpp using configuration
+Configuring spa-include-test-spa_utils_string_h.cpp using configuration
+Configuring spa-include-test-spa_utils_type_h.cpp using configuration
+Configuring version.h using configuration
+
+Executing subproject wireplumber 
+
+Project name: wireplumber
+Project version: 0.5.15
+C compiler for the host machine: clang (clang 21.1.8 "clang version 21.1.8")
+C linker for the host machine: clang ld.lld 21.1.8
+C compiler for the build machine: cc (clang 21.1.8 "clang version 21.1.8")
+C linker for the build machine: cc ld.lld 21.1.8
+Checking if "check short_name" compiles: NO 
+Run-time dependency glib-2.0 found: YES 2.88.1
+Run-time dependency gobject-2.0 found: YES 2.88.1
+Run-time dependency gmodule-2.0 found: YES 2.88.1
+Run-time dependency gio-2.0 found: YES 2.88.1
+Run-time dependency gio-unix-2.0 found: YES 2.88.1
+Dependency libspa-0.2 for host machine found: YES 0.2 (overridden)
+Dependency libpipewire-0.3 for host machine found: YES 1.6.7 (overridden)
+Library m found: YES
+Dependency threads for host machine found: YES unknown (cached)
+Dependency intl for host machine found: YES unknown (cached)
+Run-time dependency lua-5.4 found: YES 5.4.8
+Dependency systemd for host machine skipped: feature systemd disabled
+Dependency libsystemd for host machine skipped: feature systemd disabled
+Dependency libelogind for host machine skipped: feature elogind disabled
+Compiler for C supports arguments -fvisibility=hidden: YES (cached)
+Compiler for C supports arguments -Wsuggest-attribute=format: NO 
+Compiler for C supports arguments -Wsign-compare: YES (cached)
+Compiler for C supports arguments -Wpointer-arith: YES (cached)
+Compiler for C supports arguments -Wpointer-sign: YES (cached)
+Compiler for C supports arguments -Wformat: YES 
+Compiler for C supports arguments -Wformat-security: YES (cached)
+Compiler for C supports arguments -Wimplicit-fallthrough: YES (cached)
+Compiler for C supports arguments -Wmissing-braces: YES (cached)
+Compiler for C supports arguments -Wtype-limits: YES (cached)
+Compiler for C supports arguments -Wvariadic-macros: YES (cached)
+Compiler for C supports arguments -Wno-missing-field-initializers: YES (cached)
+Compiler for C supports arguments -Wno-unused-parameter: YES (cached)
+Compiler for C supports arguments -Wno-pedantic: YES (cached)
+Compiler for C supports arguments -Wold-style-declaration: NO 
+Compiler for C supports arguments -Wunused-result: YES (cached)
+Checking if "SPA_AUDIO_MAX_CHANNELS override" with dependency  compiles: NO 
+Found pkg-config: YES (/data/data/com.termux/files/usr/bin/pkg-config) 0.29.2
+Build-time dependency glib-2.0 found: YES 2.88.1
+Program /data/data/com.termux/files/usr/bin/glib-mkenums found: YES (/data/data/com.termux/files/usr/bin/glib-mkenums)
+Dependency glib-2.0 for build machine found: YES 2.88.1 (cached)
+Program /data/data/com.termux/files/usr/bin/glib-mkenums found: YES (/data/data/com.termux/files/usr/bin/glib-mkenums)
+Configuring wpversion.h using configuration
+Configuring wpbuildbasedirs.h using configuration
+Dependency glib-2.0 for build machine found: YES 2.88.1 (cached)
+Program /data/data/com.termux/files/usr/bin/glib-mkenums found: YES (/data/data/com.termux/files/usr/bin/glib-mkenums)
+Dependency glib-2.0 for build machine found: YES 2.88.1 (cached)
+Program /data/data/com.termux/files/usr/bin/glib-mkenums found: YES (/data/data/com.termux/files/usr/bin/glib-mkenums)
+Build-time dependency gio-2.0 found: YES 2.88.1
+Program /data/data/com.termux/files/usr/bin/gdbus-codegen found: YES (/data/data/com.termux/files/usr/bin/gdbus-codegen)
+Dependency glib-2.0 for build machine found: YES 2.88.1 (cached)
+Program /data/data/com.termux/files/usr/bin/glib-mkenums found: YES (/data/data/com.termux/files/usr/bin/glib-mkenums)
+Dependency glib-2.0 for build machine found: YES 2.88.1 (cached)
+Program /data/data/com.termux/files/usr/bin/glib-mkenums found: YES (/data/data/com.termux/files/usr/bin/glib-mkenums)
+Dependency gio-2.0 for build machine found: YES 2.88.1 (cached)
+Program /data/data/com.termux/files/usr/bin/glib-compile-resources found: YES (/data/data/com.termux/files/usr/bin/glib-compile-resources)
+Dependency gio-2.0 for build machine found: YES 2.88.1 (cached)
+Program /data/data/com.termux/files/usr/bin/glib-compile-resources found: YES (/data/data/com.termux/files/usr/bin/glib-compile-resources)
+Has header "sys/vfs.h" : YES (cached)
+Program python3 found: YES (/data/data/com.termux/files/usr/bin/python3)
+Program spa-json-dump-native found: YES (overridden)
+Program python3 found: NO (disabled by: doc )
+Program python3 found: NO (disabled by: introspection )
+Program sphinx-build skipped: feature doc disabled
+Program g-ir-scanner skipped: feature introspection disabled
+Program valgrind found: YES (/data/data/com.termux/files/usr/bin/valgrind)
+Message: Using glib.supp: /data/data/com.termux/files/usr/share/glib-2.0/valgrind/glib.supp
+Configuring wp-uninstalled.sh.in using configuration
+Build targets in project: 391
+Subproject wireplumber finished.
+
+Configuring pipewire.conf using configuration
+src/daemon/meson.build:82: WARNING: The variable(s) 'DEFAULT_SINK' in the input file 'src/daemon/pipewire.conf.in' are not present in the given configuration data.
+Configuring client.conf using configuration
+Configuring filter-chain.conf using configuration
+Configuring jack.conf using configuration
+Configuring minimal.conf using configuration
+Configuring pipewire-pulse.conf using configuration
+Configuring pipewire-avb.conf using configuration
+Configuring pipewire-aes67.conf using configuration
+src/daemon/meson.build:82: WARNING: The variable(s) 'TERMUX_PREFIX' in the input file 'src/daemon/pipewire-aes67.conf.in' are not present in the given configuration data.
+Configuring pipewire-uninstalled.conf using configuration
+src/daemon/meson.build:89: WARNING: The variable(s) 'DEFAULT_SINK' in the input file 'src/daemon/pipewire.conf.in' are not present in the given configuration data.
+Configuring 10-rates.conf using configuration
+Configuring 20-upmix.conf using configuration
+Configuring 50-raop.conf using configuration
+Configuring 20-upmix.conf using configuration
+Configuring 20-upmix.conf using configuration
+Program ln found: YES (/data/data/com.termux/files/usr/bin/ln)
+Configuring demonic.conf using configuration
+Configuring source-duplicate-FL.conf using configuration
+Configuring sink-mix-FL-FR.conf using configuration
+Configuring sink-make-LFE.conf using configuration
+Configuring sink-virtual-surround-5.1-kemar.conf using configuration
+Configuring sink-virtual-surround-7.1-hesuvi.conf using configuration
+Configuring sink-dolby-surround.conf using configuration
+Configuring sink-dolby-pro-logic-ii.conf using configuration
+Configuring sink-eq6.conf using configuration
+Configuring sink-matrix-spatialiser.conf using configuration
+Configuring source-rnnoise.conf using configuration
+Configuring sink-upmix-5.1-filter.conf using configuration
+Dependency systemd for host machine skipped: feature systemd-system-service disabled
+Dependency systemd for host machine skipped: feature systemd-user-service disabled
+Configuring 25-pw-rlimits.conf using configuration
+Configuring 20-pw-defaults.conf using configuration
+Has header "opus/opus_custom.h" with dependency opus: NO 
+Checking for function "opus_custom_encoder_ctl" with dependency opus: NO 
+Dependency roc for host machine skipped: feature roc disabled
+Configuring config.h using configuration
+Program pw-uninstalled.sh found: YES (/data/data/com.termux/files/home/pipewire-termux-proot/pw-uninstalled.sh)
+Build targets in project: 448
+
+wireplumber 0.5.15
+
+    Lua version                    : 5.4.8 (system)
+    systemd conf data              : NO
+    libsystemd                     : NO
+    libelogind                     : NO
+    SPA_AUDIO_MAX_CHANNELS         : 64
+
+  For documentation
+    Python 3 Sphinx related modules: NO
+    Doxygen                        : NO
+    sphinx-build                   : NO
+
+  For introspection
+    Python 3 lxml module           : NO
+    Doxygen                        : NO
+    g-ir-scanner                   : NO
+
+pipewire 1.6.7
+
+    libsystemd                              : NO
+    logind                                  : NO
+    libselinux                              : NO
+    intl support                            : YES
+    pipewire-alsa                           : YES
+    OpenSSL (for raop-sink)                 : NO
+    ffado                                   : NO
+    RLIMITs                                 : without limits.d file affecting matching PAM users
+    PAM defaults                            : without limits.d file affecting all PAM users (not needed with modern systemd or kernel)
+    Documentation                           : NO
+    Man pages                               : NO
+
+  Misc dependencies
+    dbus (Bluetooth, rt, portal, pw-reserve): NO
+    SDL2 (video examples)                   : NO
+    fftw3f (filter-chain convolver)         : NO
+    opus (Bluetooth, RTP)                   : NO
+    readline (for pw-cli)                   : NO
+    X11 (x11-bell)                          : NO
+    libcanberra (x11-bell)                  : NO
+    GLib-2.0 (Flatpak support)              : NO
+    GIO (GSettings)                         : NO
+    WebRTC Echo Canceling                   : false
+    GLib-2.0 (Snap support)                 : NO
+    Gio-2.0 (Snap support)                  : NO
+    Apparmor (Snap support)                 : NO
+    Snapd-glib (Snap support)               : NO
+    Vulkan                                  : NO
+
+  pw-cat/pw-play/pw-dump/filter-chain
+    sndfile                                 : NO
+
+  Streaming between daemons
+    libpulse                                : NO
+    Avahi DNS-SD (Zeroconf)                 : NO
+    Opus with custom modes for NetJack2     : NO
+    ROC                                     : NO
+
+  Backend
+    libusb (Bluetooth quirks)               : NO
+    gstreamer SHM allocator                 : NO
+    gstreamer-device-provider               : NO
+    gstreamer DMA_DRM support               : NO
+    JACK2                                   : NO
+    ALSA                                    : NO
+    Bluetooth audio                         : NO
+    libcamera                               : NO
+    Compress-Offload                        : NO
+    Udev                                    : NO
+    V4L2 kernel header                      : NO
+    V4L2 enabled                            : NO
+
+  GStreamer modules
+    glib-2.0                                : NO
+
+  Bluetooth audio codecs
+    SBC                                     : NO
+
+  filter-graph
+    libmysofa                               : NO
+    lilv (for lv2 plugins)                  : NO
+    EBUR128                                 : NO
+    ffmpeg                                  : YES
+    onnxruntime                             : NO
+
+  Optional programs
+    find (for header testing)               : YES
+
+  Session managers
+    Build media-session                     : NO
+    Build wireplumber                       : YES
+    Default session-manager                 : wireplumber
+
+  pw-cat/pw-play/pw-dump tool
+    Build pw-cat tool                       : NO
+
+  Optional Modules
+    jack-tunnel                             : NO
+    ffado-driver                            : NO
+    rt                                      : without RTKit
+    portal                                  : NO
+    pulse-tunnel                            : NO
+    zeroconf-discover                       : NO
+    raop-discover (needs Avahi)             : NO
+    snapcast-discover (needs Avahi)         : NO
+    raop-sink (requires OpenSSL)            : NO
+    roc-sink                                : NO
+    roc-source                              : NO
+    x11-bell                                : NO
+    avb                                     : NO
+
+  Subprojects
+    wireplumber                             : YES
+
+  User defined options
+    Cross files                             : ./android-arm64.txt
+    alsa                                    : disabled
+    audioconvert                            : enabled
+    auto_features                           : disabled
+    dbus                                    : disabled
+    examples                                : disabled
+    ffmpeg                                  : enabled
+    flatpak                                 : disabled
+    gstreamer                               : disabled
+    gstreamer-device-provider               : disabled
+    jack                                    : disabled
+    jack-devel                              : false
+    legacy-rtkit                            : false
+    pam-defaults-install                    : false
+    pipewire-jack                           : disabled
+    pipewire-v4l2                           : disabled
+    prefix                                  : /data/data/com.termux/files/usr
+    rlimits-install                         : false
+    session-managers                        : wireplumber
+    spa-plugins                             : enabled
+    support                                 : enabled
+    wireplumber:system-lua                  : true
+    wireplumber:system-lua-version          : 5.4
+    tests                                   : disabled
+
+Found ninja-1.13.2 at /data/data/com.termux/files/usr/bin/ninja
