@@ -119,10 +119,21 @@ Current PipeWire version: 1.6.7
 1. Clone this repo (extracted from the [PipeWire 1.6.7 source](https://github.com/PipeWire/pipewire/archive/refs/tags/1.6.7.zip)):
 
 ```bash
-git clone https://github.com/leefm0204/pipewire-termux.git
+git clone https://github.com/leefm0204/pipewire-termux-proot.git
 ```
 
-2. Adjust the Android NDK environment flags based on your setup, then run:
+2. cd pipewire-termux-proot
+```bash
+cd pipewire-termux-proot
+```
+
+3. Download subproject
+
+```bash
+meson subproject download
+```
+
+4. Adjust the Android NDK environment flags based on your setup, then run:
 
 ```bash
 ./build-pipewire.sh
