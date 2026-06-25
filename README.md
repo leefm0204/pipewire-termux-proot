@@ -130,7 +130,7 @@ cd pipewire-termux-proot
 3. Download subproject
 
 ```bash
-meson subproject download
+meson subprojects download
 ```
 
 4. Adjust the Android NDK environment flags based on your setup, then run:
