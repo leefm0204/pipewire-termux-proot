@@ -44,7 +44,7 @@ cp -r /data/data/com.termux/files/usr/share/pipewire /data/data/com.termux/files
 cp -r /data/data/com.termux/files/usr/share/wireplumber /data/data/com.termux/files/home/.config/
 ```
 
-### 3. First-time setup
+### 3. Launch Pipewire
 
 Run the following commands to start the daemons:
 
@@ -53,9 +53,6 @@ pipewire &
 wireplumber &
 pipewire-pulse &
 ```
-
-A `native` file will be created at `/data/data/com.termux/files/usr/tmp/pulse`. Once it appears, subsequent sessions only need `pipewire &` — `wireplumber` and `pipewire-pulse` will auto-launch.
-
 
 Export `PULSE_SERVER` in your Termux shell:
 
@@ -67,12 +64,6 @@ Alternatively, use TCP (PipeWire also listens on `tcp:4713`):
 
 ```bash
 export PULSE_SERVER="127.0.0.1"
-```
-
-### 4. Start the daemon
-
-```bash
-pipewire &
 ```
 
 Check that it is running:
@@ -165,7 +156,7 @@ cd pipewire-termux-proot
 meson subprojects download
 ```
 
-4. move oboe/libobeo.so to the android ndk sysroot library target api folder and then oboe headers folder in obeo/include/oboe to android ndk syaroot include dirs . for example target api is 35 :
+4. move oboe/libobeo.so to the android ndk sysroot library target api folder and then mv oboe headers folder in obeo/include to android ndk syaroot include dirs . for example target api is 35 :
 
 ```bash
 mv oboe/libobeo.so $SYSROOT/usr/lib/aarch64-linux-android/35 
