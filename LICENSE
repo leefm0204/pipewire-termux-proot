@@ -2,10 +2,12 @@ All PipeWire source files are licensed under the MIT License.
 (see file COPYING for details)
 
 With the exception of:
+  - libspa-alsa.so in spa/plugins/alsa (LGPL - from PulseAudio)
+  - libjackserver.so (GPL2 - links jack/control.h)
 
-  libspa-alsa.so in spa/plugins/alsa, which contains LGPL code from
-                  Pulseaudio and is thus licensed as LGPL.
+Third-party components:
+  - Google Oboe: Apache License 2.0 (see THIRD-PARTY-LICENSES.md)
+  - Android AAudio NDK: Apache License 2.0 (see THIRD-PARTY-LICENSES.md)
+  - Termux: Various licenses (see https://github.com/termux/termux-app)
 
-  libjackserver.so which links against the GPL2 jack/control.h, which
-                  makes it GPL2
-
+For full details, see THIRD-PARTY-LICENSES.md
