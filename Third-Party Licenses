@@ -1,0 +1,34 @@
+# Third-Party Licenses
+
+This project incorporates code and components from:
+
+## PipeWire
+- **License**: MIT
+- **Source**: https://pipewire.org
+- **Copyright**: Wim Taymans and contributors
+- **License File**: See COPYING
+
+## Google Oboe
+- **License**: Apache License 2.0
+- **Source**: https://github.com/google/oboe
+- **Copyright**: Google Inc.
+- **Details**: C++ audio library for Android
+
+## Android AAudio
+- **License**: Apache License 2.0
+- **Source**: Android NDK
+- **Copyright**: Google Inc.
+- **Details**: Native Android audio API (part of NDK)
+
+## Termux
+- **License**: Various (see https://github.com/termux/termux-app)
+- **Source**: https://github.com/termux
+- **Copyright**: Termux contributors
+
+## Custom Patches
+- **License**: MIT (matching PipeWire)
+- **Author**: knyipab (original AAudio/Oboe module patches)
+- **Current Maintainer**: leefm0204
+
+## Notes
+- libspa-alsa.so contains LGPL code from PulseAudio (licensed as LGPL)
