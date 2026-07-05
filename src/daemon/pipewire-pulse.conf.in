@@ -1,10 +1,10 @@
-# PulseAudio config file for PipeWire version @VERSION@ #
+# PulseAudio config file for PipeWire version "1.6.7" #
 #
-# Copy and edit this file in @PIPEWIRE_CONFIG_DIR@ for system-wide changes
+# Copy and edit this file in /data/data/com.termux/files/usr/etc/pipewire for system-wide changes
 # or in ~/.config/pipewire for local changes.
 #
 # It is also possible to place a file with an updated section in
-# @PIPEWIRE_CONFIG_DIR@/pipewire-pulse.conf.d/ for system-wide changes or in
+# /data/data/com.termux/files/usr/etc/pipewire/pipewire-pulse.conf.d/ for system-wide changes or in
 # ~/.config/pipewire/pipewire-pulse.conf.d/ for local changes.
 #
 
@@ -28,7 +28,7 @@ context.modules = [
     { name = libpipewire-module-rt
         args = {
             nice.level   = -11
-            #rt.prio      = @rtprio_client@
+            #rt.prio      = 83
             #rt.time.soft = -1
             #rt.time.hard = -1
             #rlimits.enabled = true
@@ -101,10 +101,8 @@ pulse.properties = {
     # the addresses this server listens on
     server.address = [
         "unix:/data/data/com.termux/files/usr/tmp/pulse/native"
-        #"unix:/tmp/something"              # absolute paths may be used
-        "tcp:4713"                         # IPv4 and IPv6 on all addresses
-        #"tcp:[::]:9999"                    # IPv6 on all addresses
-        "tcp:127.0.0.1:4713"               # IPv4 on a single address
+        "tcp:4713"
+        "tcp:127.0.0.1:4713"
         #
         #{ address = "tcp:4713"             # address
         #  max-clients = 64                 # maximum number of clients
