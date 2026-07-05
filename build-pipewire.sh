@@ -17,7 +17,7 @@ export STRIP=$TOOLCHAIN/bin/llvm-strip
 export PKG_CONFIG_PATH=/data/data/com.termux/files/usr/lib/pkgconfig
 export CFLAGS+="-Dindex=strchr -Drindex=strrchr"
 
-TERMUX_PREFIX=/ydata/data/com.termux/files/usr
+export TERMUX_PREFIX=/data/data/com.termux/files/usr
 
 # Copy new source files from patches/
 cp $PROJECT_DIR/patches/reallocarray.c $PROJECT_DIR/src/pipewire/
