@@ -2,7 +2,7 @@
 # Cross-compile libpipewire for aarch64-linux-android (bionic)
 set -euo pipefail
 
-export PROJECT_DIR="/data/data/com.termux/files/home/pipewire-termux-proot"
+export PROJECT_DIR=/data/data/com.termux/files/home/pipewire-termux-proot
 export ANDROID_PLATFORM=android-35
 export ANDROID_SDK=/data/data/com.termux/files/home/Android
 export ANDROID_NDK=$ANDROID_SDK/ndk/29.0.14206865
@@ -14,10 +14,10 @@ export AR=$TOOLCHAIN/bin/llvm-ar
 export LD=$TOOLCHAIN/bin/ld
 export RANLIB=$TOOLCHAIN/bin/llvm-ranlib
 export STRIP=$TOOLCHAIN/bin/llvm-strip
-export PKG_CONFIG_PATH="/data/data/com.termux/files/usr/lib/pkgconfig"
-export CFLAGS+=" -Dindex=strchr -Drindex=strrchr"
+export PKG_CONFIG_PATH=/data/data/com.termux/files/usr/lib/pkgconfig
+export CFLAGS+="-Dindex=strchr -Drindex=strrchr"
 
-TERMUX_PREFIX="/data/data/com.termux/files/usr"
+TERMUX_PREFIX=/ydata/data/com.termux/files/usr
 
 # Copy new source files from patches/
 cp $PROJECT_DIR/patches/reallocarray.c $PROJECT_DIR/src/pipewire/
@@ -80,3 +80,6 @@ meson setup builddir \
 meson compile -C builddir
 
 meson install -C builddir
+
+chmod +x $PROJECT_DIR/startpipewire
+cp $PROJECT_DIR/startpipewire $TERMUX_PREFIX/bin
