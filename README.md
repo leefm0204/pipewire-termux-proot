@@ -37,14 +37,7 @@ The package installs to `/data/data/com.termux/files/usr/`. It includes:
 - WirePlumber session manager
 - Locale and config files
 
-### 2. Copy default configuration
-
-```bash
-cp -r /data/data/com.termux/files/usr/share/pipewire /data/data/com.termux/files/home/.config/
-cp -r /data/data/com.termux/files/usr/share/wireplumber /data/data/com.termux/files/home/.config/
-```
-
-### 3. Launch Pipewire
+### 2. Launch Pipewire
 
 Restart Termux (close and reopen) after installation to get `startpipewire` to work.
 

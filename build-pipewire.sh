@@ -83,3 +83,7 @@ meson install -C builddir
 
 chmod +x $PROJECT_DIR/startpipewire
 cp $PROJECT_DIR/startpipewire $TERMUX_PREFIX/bin
+
+# Copy default configurations
+cp -r $TERMUX_PREFIX/share/pipewire $HOME/.config/
+cp -r $TERMUX_PREFIX/share/wireplumber $HOME/.config/
