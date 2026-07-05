@@ -46,24 +46,12 @@ cp -r /data/data/com.termux/files/usr/share/wireplumber /data/data/com.termux/fi
 
 ### 3. Launch Pipewire
 
-Run the following commands to start the daemons:
+Restart Termux (close and reopen) after installation to get `startpipewire` to work.
+
+startpipewire will init pipewire and pipewire-pulse at once.
 
 ```bash
-pipewire &
-wireplumber &
-pipewire-pulse &
-```
-
-Export `PULSE_SERVER` in your Termux shell:
-
-```bash
-export PULSE_SERVER="unix:/data/data/com.termux/files/usr/tmp/pulse/native"
-```
-
-Alternatively, use TCP (PipeWire also listens on `tcp:4713`):
-
-```bash
-export PULSE_SERVER="127.0.0.1"
+startpipewire &
 ```
 
 Check that it is running:
@@ -169,13 +157,11 @@ mv oboe/include/oboe $SYSROOT/usr/include
 ./build-pipewire.sh
 ```
 
-The script:
-1. Copies AAudio/Oboe module sources from `patches/` into the source tree
-2. Applies Android-specific patches (pthread compatibility, runtime directory, ALSA log API, Oboe/AAudio module registration)
-3. Configures with `meson setup` using the `android-arm64.txt` cross-file (minimal features, SPA plugins enabled, WirePlumber session manager)
-4. Compiles and installs to `$PREFIX`
+6. Restart Termux after installation to get startpipewire to work
 
-
+```
+startpipewire &
+```
 ---
 
 ## Modules provided
