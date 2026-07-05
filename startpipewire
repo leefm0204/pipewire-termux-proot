@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
-set -mp
+set -m
 export TMPDIR=/data/data/com.termux/files/usr/tmp
 
-kill -9 $(pidof pipewire) || true 2>/dev/null
+kill -9 $(pidof pipewire) 2>/dev/null
 
 rm -r $TMPDIR/pulse 2>/dev/null
 rm -r $TMPDIR/pipewire* 2>/dev/null
