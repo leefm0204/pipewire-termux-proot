@@ -14,7 +14,7 @@ This build enables PipeWire to function as a PulseAudio-compatible server on And
 |---|---|
 | `build-pipewire.sh` | Cross-compilation script using Android NDK |
 | `make-deb.sh` | Debian package builder for `.deb` packaging |
-| `pipewire-termux_1.6.7_aarch64.deb` | Pre-built package (see [Installation](#installation)) |
+| `pipewire_1.6.7_aarch64.deb` | Pre-built package (see [Installation](#installation)) |
 | `patches/` | Android-specific patches (AAudio, Oboe, pthread, runtime dir) |
 | `android-arm64.txt` | Meson cross-compilation definition file |
 
@@ -25,7 +25,7 @@ This build enables PipeWire to function as a PulseAudio-compatible server on And
 ### 1. Install the package
 
 ```bash
-dpkg -i pipewire-termux_1.6.7_aarch64.deb
+dpkg -i pipewire_1.6.7_aarch64.deb
 ```
 
 The package installs to `/data/data/com.termux/files/usr/`. It includes:
