@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+set -mp
+export TMPDIR=/data/data/com.termux/files/usr/tmp
+
+kill -9 $(pidof pipewire) || true 2>/dev/null
+
+rm -r $TMPDIR/pulse 2>/dev/null
+rm -r $TMPDIR/pipewire* 2>/dev/null
+rm -r $HOME/.config/pulse* 2>/dev/null
+rm -r $HOME/.pulse* 2>/dev/null
+
+export PULSE_SERVER=unix:$TMPDIR/pulse/native 2>/dev/null
+
+pipewire >/dev/null 2>&1 &
+
+pipewire-pulse >/dev/null 2>&1 &
