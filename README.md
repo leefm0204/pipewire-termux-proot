@@ -5,7 +5,7 @@
 This build enables PipeWire to function as a PulseAudio-compatible server on Android devices. Audio is routed through Android's native audio stack via AAudio (NDK) and Oboe (C++), allowing audio playback and capture in Termux and within **proot-distro** environments (e.g., Ubuntu).
 
 > **Credit:** [knyipab](https://github.com/knyipab/termux-packages/tree/10c726bbf78cd4008755f30467f7637d9763e318/packages/pipewire) originally created the `module-aaudio` and `module-oboe` patches. This repository adapts those patches for **PipeWire 1.6.7** and provides an updated build pipeline.
->  **Credit:** [Oboe Google](https://github.com/google/oboe/releases/download/1.10.0/oboe-1.10.0.aar) Precompiled libobeo.so and hearders
+> **Credit:** [Oboe Google](https://github.com/google/oboe/releases/download/1.10.0/oboe-1.10.0.aar) Precompiled libobeo.so and hearders
 ---
 
 ## Contents
@@ -67,7 +67,8 @@ Host Name: localhost
 Server Name: PulseAudio (on PipeWire 1.6.7)
 Server Version: 15.0.0
 Default Sample Specification: float32le 2ch 48000Hz
-Default Channel Map: front-left,front-right                                                  Default Sink: oboe-sink-6770-27
+Default Channel Map: front-left,front-right
+Default Sink: oboe-sink-6770-27
 Default Source: oboe-source-6770-28
 Cookie: 71dd:408d
 ```
