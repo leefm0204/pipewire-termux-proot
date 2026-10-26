@@ -132,14 +132,7 @@ git clone https://github.com/leefm0204/pipewire-termux-proot.git
 cd pipewire-termux-proot
 ```
 
-3. move oboe/libobeo.so to the android ndk sysroot library target api folder and then mv oboe headers folder in obeo/include to android ndk syaroot include dirs . for example target api is 35 :
-
-```bash
-mv oboe/libobeo.so $SYSROOT/usr/lib/aarch64-linux-android/35 
-mv oboe/include/oboe $SYSROOT/usr/include
-```
-
-4. Adjust the Android NDK environment flags based on your setup, then run:
+3. Adjust the Android NDK environment flags based on your setup. pls change the API number (default API=24) if require otherwire the liboboe.so and oboe headers will auto copy to target $API folder in $SYSROOT/usr/include &  $SYSROOT/usr/lib/aarch64-linux-android/$API, $TERMUX_PREFIX/lib &  $TERMUX_PREFIX/include . run
 
 ```bash
 ./build-pipewire.sh
