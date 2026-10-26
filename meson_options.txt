@@ -84,7 +84,7 @@ option('spa-plugins',
 option('alsa',
        description: 'Enable alsa spa plugin integration',
        type: 'feature',
-       value: 'auto')
+       value: 'disabled')
 option('audiomixer',
        description: 'Enable audiomixer spa plugin integration',
        type: 'feature',
@@ -192,7 +192,7 @@ option('v4l2',
 option('dbus',
        description: 'Enable code that depends on dbus',
        type: 'feature',
-       value: 'enabled')
+       value: 'disabled')
 option('libcamera',
        description: 'Enable libcamera spa plugin integration',
        type: 'feature',
