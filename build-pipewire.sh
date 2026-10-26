@@ -9,7 +9,7 @@ export ANDROID_NDK=$ANDROID_SDK/ndk/29.0.14206865
 export TOOLCHAIN=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-aarch64
 export SYSROOT=$TOOLCHAIN/sysroot
 export TARGET=aarch64-linux-android
-export API=35
+export API=24
 export AR=$TOOLCHAIN/bin/llvm-ar
 export LD=$TOOLCHAIN/bin/ld
 export RANLIB=$TOOLCHAIN/bin/llvm-ranlib
@@ -18,6 +18,12 @@ export PKG_CONFIG_PATH=/data/data/com.termux/files/usr/lib/pkgconfig
 export CFLAGS+="-Dindex=strchr -Drindex=strrchr"
 
 export TERMUX_PREFIX=/data/data/com.termux/files/usr
+#copy oboe library & headers
+cp -r $PROJECT_DIR/oboe/include/oboe $SYSROOT/usr/include/
+cp $PROJECT_DIR/oboe/lib/arm64-v8a/liboboe.so $SYSROOT/usr/lib/aarch64-linux-android/$API
+cp -r $PROJECT_DIR/oboe/include/oboe  $TERMUX_PREFIX/include
+cp $PROJECT_DIR/oboe/lib/arm64-v8a/liboboe.so $TERMUX_PREFIX/lib
+
 
 # Copy new source files from patches/
 cp $PROJECT_DIR/patches/reallocarray.c $PROJECT_DIR/src/pipewire/
