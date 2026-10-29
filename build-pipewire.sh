@@ -18,6 +18,7 @@ export PKG_CONFIG_PATH=/data/data/com.termux/files/usr/lib/pkgconfig
 export CFLAGS+="-Dindex=strchr -Drindex=strrchr"
 
 export TERMUX_PREFIX=/data/data/com.termux/files/usr
+
 cp -r $PROJECT_DIR/oboe/include/oboe $SYSROOT/usr/include/
 cp $PROJECT_DIR/oboe/lib/arm64-v8a/liboboe.so $SYSROOT/usr/lib/aarch64-linux-android/$API
 
@@ -84,8 +85,8 @@ meson setup builddir \
 -Dwireplumber:system-lua-version=5.4
 
 meson compile -C builddir
+#install to /data/data/com.termux/files/usr
 meson install -C builddir
-# Install to destdir for deb packaging (captures everything including locale .mo files)
 
 chmod +x $PROJECT_DIR/startpipewire
 cp $PROJECT_DIR/startpipewire $TERMUX_PREFIX/bin
