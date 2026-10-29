@@ -14,7 +14,7 @@ This build enables PipeWire to function as a PulseAudio-compatible server on And
 |---|---|
 | `build-pipewire.sh` | Cross-compilation script using Android NDK |
 | `make-deb.sh` | Debian package builder for `.deb` packaging |
-| `pipewire_1.6.7_aarch64.deb` | Pre-built package (see [Installation](#installation)) |
+| `pipewire_1.6.7_aarch64.deb` | Pre-built package (see [Release](https://github.com/leefm0204/pipewire-termux-proot/releases/download/1.6.7/pipewire_1.6.7_aarch64.deb)) |
 | `patches/` | Android-specific patches (AAudio, Oboe, pthread, runtime dir) |
 | `android-arm64.txt` | Meson cross-compilation definition file |
 
